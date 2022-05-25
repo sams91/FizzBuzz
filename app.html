@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A coding project by JA</title>
+    <title>FizzBuzz: A coding project by JA</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,7 +23,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><img src="/img/ja.jpg" alt="J A" class="d-inline-block align-text-center"
-            width="55" height="40"> App Name</a>
+            width="55" height="40"> FizzBuzz</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,10 +40,10 @@
                     <a class="nav-link" href="code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/sams91/FizzBuzz">Git Repo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">About</a>
+                    <a class="nav-link" href="about.html">About</a>
                 </li>
 
             </ul>
@@ -53,7 +53,48 @@
 <!-- main section  -->
     <main class="flex-shrink-0">
         <div class="container">
-
+            <div class="row row-cols-1 row-cols-lg-2">
+                <div class="col-lg-4 col border-end border-2">
+                        <h1 class="mt-3">FizzBuzz</h1>
+                        <h4 class="lead">
+                            FizzBuzz is a Javascript coding exercise using loops. After you select a 
+                            numeric value for Fizz and another for Buzz the program will display numbers 
+                            from 1 to 100. Any number that is a multiple of the value entered for Fizz will 
+                            be shown as “Fizz” in the display and any multiple of Buzz will be shown as “Buzz”. 
+                            If the number happens to be a multiple of both values entered then it will display 
+                            as “FizzBuzz”.   
+                        </h4>
+                        <h2 class="mt-5 border-bottom border-2">Instructions</h2>
+                        <p>Enter values for Fizz and Buzz. Then click the "Buzz It" button 
+                            and the results will appear.</p>
+                </div>
+                <div class="col-lg-8 col">
+                    <div>
+                        <h5 class="mt-3">Enter Values</h5>
+                        <form class="row gy-2 gx-3">
+                            <div class="col">
+                                <input id="fizzValue" type="number" class="form-control" 
+                                placeholder="Fizz Value" value= "" aria-label="Fizz Value">
+                            </div>
+                            <div class="col">
+                                <input id="buzzValue" type="number" class="form-control" 
+                                placeholder="Buzz Value" value= "" aria-label="Buzz Value">
+                            </div>
+                            <div class="col-12 d-flex justify-content-end">
+                                <button type="button" id="btnSubmit" class="btn btn-dark btn-lg">Buzz It</button>
+                            </div>
+                        </form>
+                        <h2 class="mt-5 border-bottom border-2">Results</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-sm">
+                                <tbody id="results">
+                                    <!--Results go here. this is done using JS-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -83,11 +124,25 @@
             </div>
         </div>
        </footer>
+
+       <template id="fbTemplate">
+           <tr>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+           </tr>
+       </template>
+
           <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
 </script>
 <script src="/js/site.js"></script>
+<script>
+    document.getElementById("btnSubmit").addEventListener("click", getValues);
+</script>
 
 </body>
 
